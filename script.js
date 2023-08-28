@@ -6,7 +6,7 @@ function toggleMenu() {
 }
 
 const typewriterText = document.getElementById("typewriter-text");
-const texts = ["Machine Learning Enthusiast","Data Science Enthusiast", "AI Enthusiast"]; // Add more texts here
+const texts = ["Machine Learning Enthusiast","Data Science Enthusiast", "Data Anylist"]; // Add more texts here
 let textIndex = 0;
 let charIndex = 0;
 
