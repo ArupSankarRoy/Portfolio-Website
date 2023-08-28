@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
 
     // Modify the URL to point to a valid server-side script
-    const url = 'https://example.com/submit-form'; // Replace with your server URL
+    const url = 'https://arupsankarroy.github.io/Portfolio-Website/contact.html'; // Replace with your server URL
 
     const formData = new FormData(contactForm);
     const response = await fetch(url, {
