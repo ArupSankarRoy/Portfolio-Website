@@ -219,6 +219,10 @@ section {
   overflow: hidden; 
   text-overflow: ellipsis;
 }
+section:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
 
 .title {
   font-size: 3rem;
