@@ -520,6 +520,10 @@ footer {
   white-space: nowrap;
   animation: typing 2s steps(22), blink-caret 0.5s step-end infinite;
 }
+.typewriter-container {
+  display: inline-flex; 
+  align-items: flex-start;
+}
 
 @keyframes blink-caret {
   from, to {
