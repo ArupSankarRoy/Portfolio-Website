@@ -187,10 +187,15 @@ section {
   width: 400px;
   margin: auto 0;
 }
-
+.section__text h2 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
 .section__text {
   align-self: center;
   text-align: center;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 20px;
 }
 
 .section__text p {
@@ -237,10 +242,11 @@ section {
 
 /* BUTTONS */
 .btn-container {
-   display: flex;
+  display: flex;
   justify-content: center;
   gap: 1rem;
   margin-top: 1.5rem;
+  background-color: #f9f9f9;
 }
 
 .btn {
@@ -349,6 +355,9 @@ article {
 article .icon {
   cursor: default;
 }
+.article-container article:hover {
+  transform: translateY(-5px);
+}
 
 /* PROJECTS SECTION */
 #projects {
@@ -422,6 +431,7 @@ article .icon {
 
 .contact-icon {
   cursor: default;
+  margin: 0.5rem;
 }
 
 .email-icon {
