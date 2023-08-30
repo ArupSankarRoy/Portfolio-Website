@@ -228,18 +228,18 @@ section {
 
 /* BUTTONS */
 .btn-container {
-  display: flex;
+   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .btn {
-  font-weight: 600;
-  transition: background 300ms ease, color 300ms ease;
-  padding: 1.2rem 2rem;
-  width: 12rem;
-  border-radius: 25px;
-  font-size: 1.1rem;
+    font-weight: 600;
+  transition: background 300ms ease, color 300ms ease, transform 300ms ease;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  font-size: 1rem;
   background: linear-gradient(to right, #007bff, #002b80);
   color: white;
   border: none;
@@ -250,8 +250,9 @@ section {
 }
 
 .btn:hover {
-  background: linear-gradient(to right, #007bff, #0056b3);
+ background: linear-gradient(to right, #007bff, #0056b3);
   color: #f9f9f9;
+  transform: scale(1.05);
 }
 
 /* ABOUT SECTION */
