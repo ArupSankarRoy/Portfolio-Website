@@ -124,3 +124,45 @@
     text-align: justify;
   }
 }
+/* HAMBURGER MENU */
+@media screen and (max-width: 768px) {
+  .menu-links {
+    position: fixed;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    right: 20px; /* Position it on the right side with some spacing */
+    top: 60px; /* Adjust the top position for spacing */
+    width: 250px;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Add rounded corners */
+  }
+
+  .menu-links li {
+    list-style: none;
+    margin-bottom: 0.5rem;
+    text-align: right;
+  }
+
+  .menu-links a {
+    display: block;
+    padding: 10px 20px; /* Add padding for the links */
+    font-size: 1.25rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 1px solid #eee; /* Add a separator line between links */
+  }
+
+  .menu-links a:last-child {
+    border: none; /* Remove border from the last link */
+  }
+
+  .menu-links.open {
+    max-height: 300px;
+  }
+  
+}
+
