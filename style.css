@@ -409,9 +409,6 @@ article .icon {
   justify-content: center;
   flex-direction: column;
   height: 70vh;
-  background-image: url('path-to-pattern-image.jpg');
-  background-repeat: repeat;
-  background-size: cover;
 }
 
 .contact-info-upper-container {
@@ -435,7 +432,8 @@ article .icon {
 }
 
 .contact-info-container p {
-  font-size: larger;
+    font-size: 1rem;
+    padding: 0.2rem;
 }
 
 .contact-icon {
