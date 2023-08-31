@@ -163,6 +163,10 @@
   .menu-links.open {
     max-height: 300px;
   }
-  
+  .contact-info-container {
+    flex-direction: column; /* Stack the elements vertically on smaller screens */
+    gap: 0.2rem; /* Reduce the gap between elements */
+    text-align: center;
+  }
 }
 
