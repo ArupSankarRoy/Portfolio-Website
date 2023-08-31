@@ -98,7 +98,7 @@
 </head>
 <body>
   <div id="contact-container">
-    <div id="contact-form">
+    <div id="contact-form" onsubmit="sendEmail(); reset(); return false;">
       <h2>Contact with me</h2>
       <form id="contact">
         <input type="text" name="name" placeholder="Your Name" required><br>
@@ -114,7 +114,23 @@
     </div>
   </div>
   
-  <script src="contact.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function sendEmail(){
+
+      Email.send({
+         SecureToken : "12c662c3-d28a-4d64-8bd5-bf30c85d7ef3",
+         To : 'arupsankarroy11@gmail.com',
+         From : document.getElementById("email").value,
+         Subject : "New Contact Form Enquiry",
+         Body : "Name: "+document.getElementById("name").value
+                 + "<br> Email: "+document.getElementById("email").value
+                 + "<br> Email: "+document.getElementById("message").value
+      }).then(
+            message => alert("Message Sent Successfully")
+        );
+    }
+  </script>
 </body>
 </html>
 
