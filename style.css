@@ -47,10 +47,67 @@ nav {
   z-index: 100;
 }
 
-.nav-links {
-  gap: 2rem;
-  list-style: none;
-  font-size: 1.5rem;
+/* Style the navigation links */
+.nav-links li {
+  list-style: none; /* Remove bullet points */
+  display: inline-block; /* Display links horizontally */
+  margin-right: 15px; /* Reduce the right margin to make them narrower */
+}
+
+.nav-links li a {
+  font-family: "Raleway", sans-serif; /* Custom font */
+  font-weight: 700; /* Bold font weight */
+  text-transform: uppercase; /* Uppercase text */
+  color: #007bff; /* Text color */
+  text-decoration: none; /* Remove underline */
+  background-color: transparent; /* Transparent background */
+  border-radius: 50px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s; /* Smooth transitions */
+  padding: 10px 20px; /* Adjust padding to make them narrower */
+  letter-spacing: 1px; /* Add letter spacing */
+  margin-top: 5px; /* Adjust top margin */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Text shadow */
+  position: relative; /* Position for pseudo-element */
+  overflow: hidden; /* Hide the pseudo-element overflow */
+  transition: transform 0.3s ease;
+}
+
+/* Create a pseudo-element for the hover effect */
+.nav-links li a::before {
+  content: ""; /* Empty content */
+  position: absolute; /* Position relative to the link */
+  top: 0; /* Position at the top */
+  left: 0; /* Position at the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background: radial-gradient(circle, #007bff, transparent); /* Radial gradient background */
+  border-radius: 50px; /* Rounded corners */
+  transform: scale(0); /* Initially scaled to 0 */
+  transform-origin: center; /* Scale from the center */
+  z-index: -1; /* Behind the link text */
+  transition: transform 0.3s ease-in-out; /* Smooth scale transition */
+}
+
+/* Style the navigation links on hover */
+.nav-links li a:hover {
+  color: #fff; /* Hover text color */
+  background-color: #007bff; /* Hover background color */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Hover shadow effect */
+  transform: translateY(-2px) scale(1.05); /* Hover translate and scale effect */
+}
+
+/* Scale and reveal the pseudo-element on hover */
+.nav-links li a:hover::before {
+  transform: scale(2); /* Scale to 2x size on hover */
+  opacity: 0; /* Fade out the pseudo-element */
+}
+
+/* Add a border to the active link */
+.nav-links li.active a {
+  border: 2px solid #007bff; /* Active link border */
+  background: #007bff; /* Active link background */
+  color: #fff; /* Active link text color */
 }
 
 a {
