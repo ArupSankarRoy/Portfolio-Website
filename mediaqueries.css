@@ -181,7 +181,7 @@
 
   .section__pic-container {
     width: 100%;
-    max-width: 300px; /* Adjust as needed */
+    max-width: 350px; /* Adjust as needed */
     margin: 0 auto 2rem;
   }
 }
