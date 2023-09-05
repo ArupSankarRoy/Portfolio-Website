@@ -44,7 +44,6 @@ a,
 
 /* DESKTOP NAVIGATION */
 .nav-links {
-  display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -77,7 +76,7 @@ nav {
 }
 
 .nav-links li a {
-   text-decoration: none;
+  text-decoration: none;
   color: #333; /* Text color */
   font-weight: bold;
   font-size: 1.2rem;
@@ -113,8 +112,9 @@ nav {
 
 /* Style the navigation links on hover */
 .nav-links li a:hover {
-  transform: scaleX(1); /* Expand the border on hover */
-  transform-origin: left; /* Expand from left to right */
+  color: #007bff; /* Hover color */
+  transform: translateY(-3px); /* Move the link up slightly on hover */
+  animation: scaleUp 0.2s ease, bounce 0.4s ease, textColorChange 0.3s ease; /* Add scale, bounce, and text color change animations on hover */
 }
 
 /* Define the scale-up animation */
