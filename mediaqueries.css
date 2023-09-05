@@ -168,5 +168,28 @@
     gap: 0.2rem; /* Reduce the gap between elements */
     text-align: center;
   }
+  section {
+    margin: 2rem 0;
+    padding: 1rem;
+    transition: all 0.3s ease; /* Add transition for smooth changes */
+  }
+
+  .section-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .section__pic-container {
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+    margin: 0 auto 2rem;
+  }
+}
+/* For screens between 768px and 1200px (e.g., tablets) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  section {
+    margin: 2rem 1rem; /* Adjust the margin as needed */
+    transition: all 0.3s ease; /* Add transition for smooth changes */
+  }
 }
 
