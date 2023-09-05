@@ -331,11 +331,11 @@ section:hover {
 }
 
 .title {
-  font-size: 3rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
   text-align: center;
   color: #002b80;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  text-transform: uppercase;
 }
 
 #socials-container {
