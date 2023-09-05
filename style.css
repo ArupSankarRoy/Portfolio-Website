@@ -591,10 +591,6 @@ footer {
   text-align: center;
 }
 
-/* ... (Remaining CSS Styles) ... */
-
-
-
 /* Keyframes for animation effects */
 @keyframes borderAnimation {
   0%, 100% {
@@ -638,14 +634,22 @@ footer {
   }
 }
 
+.typewriter-container {
+  display: inline-flex;
+  align-items: flex-start;
+  vertical-align: middle; /* Adjust the vertical alignment as needed */
+  min-height: 3rem; /* Adjust the height as needed */
+}
+
 .typewriter {
+  font-family: 'Ysabeau SC', sans-serif;
+  font-weight: bold; /* Make the text bold */
+  color: #444444; /* Set the text color to grey */
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 2s steps(22), blink-caret 0.5s step-end infinite;
-}
-.typewriter-container {
-  display: inline-flex; 
-  align-items: flex-start;
+  animation: blink-caret 0.5s step-end infinite;
+  margin-right: 1rem;
+  font-size: 1.8rem;
 }
 
 @keyframes blink-caret {
