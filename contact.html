@@ -98,40 +98,75 @@
 </head>
 <body>
   <div id="contact-container">
-    <div id="contact-form" onsubmit="sendEmail(); reset(); return false;">
+    <div id="contact-form">
       <h2>Contact with me</h2>
-      <form id="contact">
-        <input type="text" name="name" placeholder="Your Name" required><br>
-        <input type="email" name="email" placeholder="Your Email" required><br>
-        <textarea name="message" placeholder="Your Message" required></textarea><br>
+      <form id="contact" onsubmit="sendEmail(); return false;">
+        <input type="text" id="name" name="name" placeholder="Your Name" required><br>
+        <input type="email" id="email" name="email" placeholder="Your Email" required><br>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea><br>
         <button type="submit">Send Message</button>
       </form>
     </div>
     <div id="contact-details">
       <h3>Contact Information</h3>
       <p>Email: arupsankarroy11@gmail.com</p>
-      <p>Phone:+91 9679713408</p>
+      <p>Phone: +91 9679713408</p>
     </div>
   </div>
   
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script>
-    function sendEmail(){
-
+    function sendEmail() {
       Email.send({
-         Host : "smtp.elasticemail.com",
-         Username : "arupsankarroy11@gmail.com",
-         Password : "63B3B4BDC8BD2AB43FE2E249F548904FFE43",
-         To : 'arupsankarroy11@gmail.com',
-         From : document.getElementById("email").value,
-         Subject : "New Contact Form Enquiry",
-         Body : "Name: "+document.getElementById("name").value
-                 + "<br> Email: "+document.getElementById("email").value
-                 + "<br> Email: "+document.getElementById("message").value
+        Host: "smtp.elasticemail.com",
+        Username: "arupsankarroy11@gmail.com",
+        Password: "63B3B4BDC8BD2AB43FE2E249F548904FFE43",
+        To: 'arupsankarroy11@gmail.com',
+        From: document.getElementById("email").value,
+        Subject: "New Contact Form Enquiry",
+        Body: "Name: " + document.getElementById("name").value
+          + "<br> Email: " + document.getElementById("email").value
+          + "<br> Message: " + document.getElementById("message").value
       }).then(
-            message => alert("Message Sent Successfully")
-        );
+        message => {
+          alert("Message Sent Successfully");
+          document.getElementById("contact").reset(); // Clear the form after sending
+        }
+      );
     }
+  </script>
+   <script>
+    const express = require('express');
+    const bodyParser = require('body-parser');
+    const app = express();
+
+    // Parse URL-encoded bodies (as sent by HTML forms)
+    app.use(bodyParser.urlencoded({ extended: true }));
+
+    // Parse JSON bodies (as sent by API clients)
+    app.use(bodyParser.json());
+
+    // Serve static files (e.g., your HTML file)
+    app.use(express.static('public'));
+
+    // Define a route for handling form submissions
+    app.post('/submit', (req, res) => {
+      // Retrieve form data from the request body
+      const name = req.body.name;
+      const email = req.body.email;
+      const message = req.body.message;
+
+      // Implement your email sending logic here (using nodemailer, SMTP, etc.)
+
+      // Respond to the client
+      res.send('Message Sent Successfully');
+    });
+
+    // Start the server
+    const port = process.env.PORT || 3000;
+    app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    });
   </script>
 </body>
 </html>
