@@ -6,6 +6,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f0f0; /* Grayish background color */
+  color: #333; /* Text color */
+  position: relative;
+  border-bottom-left-radius: 30px; /* Rounded left corner */
+  border-bottom-right-radius: 30px; /* Rounded right corner */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
 
 body {
   font-family: "Poppins", sans-serif;
@@ -53,10 +65,10 @@ nav {
 
 /* Style the navigation links */
 .nav-links {
-  display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
   align-items: center;
 }
 
@@ -65,21 +77,12 @@ nav {
 }
 
 .nav-links li a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  text-decoration: none;
-  color: #007bff;
-  background-color: transparent;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  line-height: 1.5;
-  transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
-  position: relative;
-  overflow: hidden;
+   text-decoration: none;
+  color: #333; /* Text color */
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.2s ease; /* Add smooth color and scale transitions on hover */
+  position: relative; /* Add a relative position for pseudo-element */
 }
 
 .nav-links li a i {
@@ -96,25 +99,52 @@ nav {
 
 /* Create a pseudo-element for the hover effect */
 .nav-links li a::before {
-  content: "";
+  content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  background: radial-gradient(circle, #007bff, transparent);
-  border-radius: 50%;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  z-index: -1;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  height: 2px;
+  background-color: #007bff; /* Border color */
+  transform: scaleX(0); /* Initial width is 0 */
+  transform-origin: right; /* Start the animation from the right */
+  transition: transform 0.3s ease; /* Add a smooth transform transition */
 }
 
 /* Style the navigation links on hover */
 .nav-links li a:hover {
-  color: #fff;
-  background-color: #007bff;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  transform: scale(1.05);
+  transform: scaleX(1); /* Expand the border on hover */
+  transform-origin: left; /* Expand from left to right */
+}
+
+/* Define the scale-up animation */
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* Define the bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Define the text color change animation */
+@keyframes textColorChange {
+  0% {
+    color: #333;
+  }
+  100% {
+    color: #fff; /* Change text color to white on hover */
+  }
 }
 
 /* Scale and reveal the pseudo-element on hover */
@@ -142,6 +172,9 @@ nav {
 
 .logo {
   font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #007bff; 
 }
 
 .logo:hover {
