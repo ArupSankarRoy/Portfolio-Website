@@ -149,9 +149,8 @@ nav {
 
 /* Scale and reveal the pseudo-element on hover */
 .nav-links li a:hover::before {
-  transform: translate(-50%, -50%) scale(2);
-  opacity: 1;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: scaleX(1); /* Expand the border on hover */
+  transform-origin: left;
 }
 
 /* Add a border to the active link */
@@ -173,12 +172,9 @@ nav {
 .logo {
   font-size: 2rem;
   font-weight: bold;
+  cursor: default;
   text-transform: uppercase;
   color: #007bff; 
-}
-
-.logo:hover {
-  cursor: default;
 }
 
 /* HAMBURGER MENU */
@@ -369,7 +365,7 @@ section:hover {
 }
 
 .btn {
-    font-weight: 600;
+  font-weight: 600;
   transition: background 300ms ease, color 300ms ease, transform 300ms ease;
   padding: 1rem 1.5rem;
   border-radius: 20px;
