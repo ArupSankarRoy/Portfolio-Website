@@ -53,6 +53,16 @@
     height: 275px;
     margin: 0 auto 2rem;
   }
+  .about-me-pic-container {
+    width: 206px; 
+    height: 275px; 
+    margin: 0 auto 2rem;
+  }
+ .intro-pic-container {
+   width: 275px; 
+   height: 275px; 
+   margin: 0 auto 2rem; 
+  }
   .about-containers {
     margin-top: 0;
   }
